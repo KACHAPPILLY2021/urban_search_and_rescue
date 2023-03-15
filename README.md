@@ -79,7 +79,7 @@ https://user-images.githubusercontent.com/90359587/224387441-d45e0f85-1992-43dc-
 <!-- Document and Reports -->
 ## Documentation
 
-The documentation for this project can be found here.
+The documentation for this project can be found [here](https://kachappilly2021.github.io/urban_search_and_rescue/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
