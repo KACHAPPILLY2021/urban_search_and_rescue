@@ -81,13 +81,11 @@ https://user-images.githubusercontent.com/90359587/224387441-d45e0f85-1992-43dc-
 
 The documentation for this project can be found [here](https://kachappilly2021.github.io/urban_search_and_rescue/).
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 ### Report
 
-Detailed decription for this project can be found in this [![Youtube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/9MUCtm4vwkQ)
+* The detailed problem statement and additional background information can be found [here](https://github.com/KACHAPPILLY2021/urban_search_and_rescue/blob/main/primary/final_project_fall2021.pdf)
+* The main report which dicusses our approach in great detail is [here](https://github.com/KACHAPPILLY2021/urban_search_and_rescue/blob/main/report/ENPM809Y_Final_Report__Group7.pdf)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -98,7 +96,8 @@ These are the instructions to get started on the project.
 To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
-* atleast C++17
+* ROS 1 with [Turtlebot3](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/) installed
+* Catkin workspace ```catkin_ws```
 * OS - Linux (tested)
 
 
@@ -106,34 +105,28 @@ To get a local copy up and running follow these simple steps.
 
 Installing the micromouse simulator and running the code.
 
-1. Make directory
+1. Clone the repo
    ```sh
-   mkdir ~/RWA2_simulator
+   https://github.com/KACHAPPILLY2021/urban_search_and_rescue.git
    ```
-2. Clone the repos
+2. To install navigation and slam dependencies
    ```sh
-   cd ∼ /RWA2_simulator
-   ```
-   ```sh
-   git clone https://github.com/mackorone/mms.git
+   cd ~/urban_search_and_rescue/script
    ```
    ```sh
-   git clone https://github.com/micromouseonline/mazefiles.git
+   sudo chmod a+rwx install.bash
    ```
    ```sh
-   git clone https://github.com/KACHAPPILLY2021/maze_solving_algorithm.git
+   ./install.bash
    ```
-3. Compile Simulator
+3. Copy the ROS package ```final_project``` and place it inside ```catkin_ws/src``` and build
    ```sh
-   sudo apt-get install qt5-default
+   catkin build final_project
    ```
+4. Save this command in ```bashrc``` file for loading ArUco markers in gazebo
    ```sh
-   cd mms/src
+   export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:/home/<username>/catkin_ws/src/final_project/models
    ```
-   ```sh
-   qmake && make
-   ```
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -142,26 +135,17 @@ Installing the micromouse simulator and running the code.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-How to start simulator and use this DFS code in it.
-1. Start simulator
+To run this project, only two commands are required.
+1. Source the workspace
+2. To start Gazebo and RViz, and for setting parameters on the Parameter Server and spawning robots:
    ```sh
-   cd ∼ /RWA2_simulator/mms/bin
+   roslaunch final_project multiple_robots.launch
    ```
+3. Open new terminal and run the node:
    ```sh
-   ./mms
+   rosrun final_project final_project_node
    ```
-2. Choose any maze type and Click on the + button as shown in figure.
 
-3. **Directory**: Click Browse and navigate to 'maze_solving_algorithm'
-4. Enter **Build command** as:
-   ```sh
-   g++ src/main.cpp src/mouse.cpp src/node.cpp src/api.cpp
-   ```
-5. Enter **Run Command** as :
-  ```sh
-  ./a.out
-  ```
-6. Then Press **Build**, followed by **RUN** under the **Controls** Section
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -169,7 +153,9 @@ How to start simulator and use this DFS code in it.
 <!-- CONTRIBUTORS -->
 ## Contributors
 
-Here are the
+- [Hemanth Joseph](https://github.com/HemanthJoseph)
+- [Jeffin Johny](https://github.com/KACHAPPILLY2021)
+- [Pradip Kathiriya](https://github.com/Pradip-Kathiriya)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
