@@ -49,14 +49,16 @@
 
 
 
-Implemented Depth First Search algorithm using Object Oriented Programming in C++ and visualized its output using Micromouse simulator.
+This project aims to improve autonomous robotics for Urban Search and Rescue (US&R) scenarios. In US&R operations, robots are used to explore partially collapsed buildings and locate trapped victims. The robot generates a map of the building and marks the location of victims. 
+
+This project will use squared fiducial markers, called ArUco markers, to represent the victims. A turtlebot3, **the explorer**, will be used to locate the markers . A second turtlebot3, **the follower**, will then be deployed to retrieve the markers' indicated victims. A ROS package in C++ following OOP concepts has been developed for this project.
 
 Summary of tasks achieved:
-* Implemented DFS using a representation of the maze(mouse has no prior knowledge of walls except the boundaries.)
-* Generated path from current position to goal using the representation of the maze.
-* Moved the mouse using API interface commands and updated the walls as detected.
-* The robot halted when the mouse hit a wall, and DFS was employed to recalculate the path using prior wall data.
-* The described steps were repeated until the goal position was achieved.
+* Created and stored the map of the environment using ```gmapping``` package.
+* Navigated **explorer** through the map using ```move_base``` for different target locations accessed from parameter server (Detecting victims).
+* Broadcasted and created transforms between */marker_frame* and */map* frames for **follower**.
+* Based on this, the **follower** visits the ArUco markers in fashion of increasing tag IDs (Rescuing victims)
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -72,6 +74,9 @@ Summary of tasks achieved:
 </div>
 
 https://user-images.githubusercontent.com/90359587/224387441-d45e0f85-1992-43dc-be13-360b4ef2d11c.mp4
+
+[![Youtube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/Fk4g4xxianc)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -79,13 +84,13 @@ https://user-images.githubusercontent.com/90359587/224387441-d45e0f85-1992-43dc-
 <!-- Document and Reports -->
 ## Documentation
 
-The documentation for this project can be found [here](https://kachappilly2021.github.io/urban_search_and_rescue/).
+The documentation for this project can be found at this link [Documentation](https://kachappilly2021.github.io/urban_search_and_rescue/).
 
 
 ### Report
 
-* The detailed problem statement and additional background information can be found [here](https://github.com/KACHAPPILLY2021/urban_search_and_rescue/blob/main/primary/final_project_fall2021.pdf)
-* The main report which dicusses our approach in great detail is [here](https://github.com/KACHAPPILLY2021/urban_search_and_rescue/blob/main/report/ENPM809Y_Final_Report__Group7.pdf)
+* The detailed problem statement and additional background information can be found here. [Problem_Statement](https://github.com/KACHAPPILLY2021/urban_search_and_rescue/blob/main/primary/final_project_fall2021.pdf)
+* The main report which dicusses our approach in great detail  can be found here. [Report](https://github.com/KACHAPPILLY2021/urban_search_and_rescue/blob/main/report/ENPM809Y_Final_Report__Group7.pdf)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
