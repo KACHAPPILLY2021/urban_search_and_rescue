@@ -103,7 +103,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Installation
 
-Installing the micromouse simulator and running the code.
+Installing the dependencies and running the code.
 
 1. Clone the repo
    ```sh
