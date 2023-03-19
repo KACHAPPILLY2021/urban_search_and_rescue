@@ -112,7 +112,7 @@ Installing the dependencies and running the code.
 
 1. Clone the repo
    ```sh
-   https://github.com/KACHAPPILLY2021/urban_search_and_rescue.git
+   git clone https://github.com/KACHAPPILLY2021/urban_search_and_rescue.git
    ```
 2. To install navigation and slam dependencies
    ```sh
